@@ -28,9 +28,12 @@ public final class Assignment0DeleteEmptyMethod extends BugChecker implements Me
   @Override
   public Description matchMethod(MethodTree tree, VisitorState state) {
 
+    // abstract and interface methods dont have a body
     if(tree.getBody()==null) {
       return Description.NO_MATCH;
-    } else if (!tree.getBody().getStatements().isEmpty() || ASTHelpers.hasAnnotation(tree,"java.lang.Override",state)) {
+    }
+    // body has statements or has a @Override annotation
+    if (!tree.getBody().getStatements().isEmpty() || ASTHelpers.hasAnnotation(tree,"java.lang.Override",state)) {
       return Description.NO_MATCH;
     }
     // XXX: Part 1: Ensure that we only delete methods that contain no statements.
