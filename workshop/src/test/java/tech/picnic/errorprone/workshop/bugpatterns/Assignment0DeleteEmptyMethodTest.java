@@ -6,7 +6,7 @@ import com.google.errorprone.CompilationTestHelper;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Disabled("Enable this when implementing the BugChecker.")
+//@Disabled("Enable this when implementing the BugChecker.")
 final class Assignment0DeleteEmptyMethodTest {
   @Test
   void identification() {
